@@ -2,8 +2,8 @@ import csv
 import sys
 
 #1. Place each record of a file in a list.
-#2. Iterate thru each element of the list and get its length.
-#3. If the length is less than one replace with value x.
+#2. Iterate thru each element of the list.
+#3. If the index==1 amd x is '0'.
 
 test=sys.argv[2] #sys.argv[2]=test3
 date=sys.argv[1] #sys.argv[1]=2017-12-08
