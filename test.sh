@@ -57,8 +57,6 @@ case $TEST in
 esac
 python search_heart.py ${MONTH} ${TEST}
 python boost.py ${MONTH} ${TEST}
-#python concatenate.py ${MONTH} ${TEST}
-
 
 
 python json_to_csv.py dataset step_${TEST}_${MONTH}.txt step_${TEST}_${MONTH}.csv 
@@ -66,10 +64,12 @@ python json_to_csv.py dataset heart_${TEST}_${MONTH}_concate.txt heart_${TEST}_$
 
 
 step="step_"${TEST}"_"${MONTH}".csv" #step=step_test3_2017-12-08.csv
-heart="heart_"${TEST}"_"${MONTH}"_replace.csv" #heart=heart_test3_2017-12-08_replace.csv
+heart="heart_"${TEST}"_"${MONTH}"_complement.csv" #heart=heart_test3_2017-12-08_replace.csv
 output=${TEST}"_step_heart_"${MONTH}".csv" #output=test3_step_heart_2017-12-08.csv
 OUTPUT=${MONTH}
 
-python replace.py ${OUTPUT} ${TEST}
+#python replace.py ${OUTPUT} ${TEST}
+python mkglobal.py ${MONTH} ${TEST}
+python global.py ${MONTH} ${TEST}
 python merge.py ${step} ${heart} ${output}
                    
